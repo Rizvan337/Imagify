@@ -8,6 +8,6 @@ userRouter.post("/register", registerUser);
 // User login route
 userRouter.post("/login", loginUser);
 // User credits route
-userRouter.post("/credits",userAuth,userCredits)
+userRouter.get("/credits",userAuth,userCredits)
 
 export default userRouter;

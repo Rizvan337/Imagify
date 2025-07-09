@@ -12,7 +12,11 @@ app.use(express.json())
 
 app.use(cors())
 await connectDB()
-
+app.use((req, res, next) => {
+    console.log(`➡️  ${req.method} ${req.originalUrl}`);
+    next();
+  });
+  
 app.use('/api/user', userRouter)
 app.use('/api/image', imageRouter)
 app.get('/',(req,res)=>{
