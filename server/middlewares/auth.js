@@ -1,7 +1,13 @@
 import jwt from 'jsonwebtoken';
 
 const userAuth = async (req, res, next) => {
-    const token = req.headers['token'] || req.headers['authorization'];
+    // const token = req.headers['token'] || req.headers['authorization'];
+    const authHeader = req.headers['authorization'];
+if (!authHeader || !authHeader.startsWith('Bearer ')) {
+  return res.status(401).json({ success: false, message: "Unauthorized access. Login again" });
+}
+const token = authHeader.split(' ')[1];
+
     if (!token) {
         return res.status(401).json({success: false, message: "Unauthorized access.Login again"});
     }
