@@ -27,7 +27,7 @@ const BuyCredit = () => {
       reciept: order.receipt,
       handler: async (response) => {
         try {
-          const {data} = await axios.post(backendUrl + '/api/user/verify-razor',response,{headers:{token}})
+          const {data} = await axios.post(backendUrl + '/api/user/verify-razor',response,{headers:{Authorization: `Bearer ${token}`}})
           if(data.success) {
             loadCreditsData()
             navigate('/')
@@ -46,7 +46,7 @@ const BuyCredit = () => {
       if(!user) {
         setShowLogin(true)
       }
-      const {data} = await axios.post(backendUrl+ '/api/user/pay-razor',{planId},{headers:{token}})
+      const {data} = await axios.post(backendUrl+ '/api/user/pay-razor',{planId},{headers:{Authorization: `Bearer ${token}`}})
       if(data.success){
         console.log("🎉 Order created:", data.order)
         initPay(data.order)
