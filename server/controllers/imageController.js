@@ -14,7 +14,7 @@ const generateImage = async (req, res) => {
         if(!user || !prompt) {
             return res.status(404).json({ success: false, message: "Missing Details"});
         }
-        if(user.creditBalance === 0 || userModel.creditBalance < 0) {
+        if(user.creditBalance <= 0) {
             return res.status(403).json({ success: false, message: "Insufficient Credit Balance",creditBalance : user.creditBalance});
         }
         const formData = new FormData()
