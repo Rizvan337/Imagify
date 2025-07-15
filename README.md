@@ -8,8 +8,7 @@ Imagify is a full-stack web application that transforms words into stunning imag
 
 - ✏️ Convert text into AI-generated images
 - 💬 Clean, modern UI using Tailwind CSS
-- 🔐 Secure user authentication (JWT-based)
-- ☁️ Image hosting and cloud integration (optional)
+- 🔐 Secure user authentication (JWT-based) 
 - 📦 Built with Vite for lightning-fast frontend
 - 🔄 Backend API with Express.js and MongoDB
 
@@ -29,7 +28,7 @@ Imagify is a full-stack web application that transforms words into stunning imag
 - JWT (Authentication)
 - Bcrypt (Password hashing)
 - CORS
-- Razorpay (for payment if implemented)
+- Razorpay 
 
 ---
 
