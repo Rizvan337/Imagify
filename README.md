@@ -19,7 +19,6 @@ Imagify is a full-stack web application that transforms words into stunning imag
 ### Frontend
 - React.js (Vite)
 - Tailwind CSS
-- Axios
 
 ### Backend
 - Node.js
